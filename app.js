@@ -34,18 +34,21 @@ const products = [
 
 // *** 1 ***
 
+// Using .filter() to filter and extract products with a value of less than 200.
 const cheapProducts = products.filter((e) => e.price < 200);
 
 console.log(cheapProducts);
 
 // *** 2 ***
 
+// Using .map() to extract the value of name from all objects
 const productNames = products.map((e) => e.name);
 
 console.log(productNames);
 
 // *** 3 ***
 
+// Using .filter() to first filter out all products of a certain category, then using .map() to extract the names from the filtered products
 const catName = products
   .filter((e) => e.category === "electronics")
   .map((e) => e.name);
@@ -54,12 +57,14 @@ console.log(catName);
 
 // *** 4 ***
 
+// Using .some() to to check if any of the products have a price value higher than 1000
 const kProducts = products.some((e) => e.price > 1000);
 
 console.log(kProducts);
 
 // *** 5 ***
 
+// Using .reduce() to sum up the total value of all products. a is the accumulated value, and 0 is the starting value of a.
 const totalPrice = products.reduce((a, e) => (a += e.price), 0);
 
 console.log(totalPrice);
